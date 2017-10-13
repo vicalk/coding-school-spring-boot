@@ -20,19 +20,19 @@ public class AccountServiceImpl implements AccountService {
     private AccountDao accountDao;
 
     @Override
-    public void login(String username, String password) throws AuthenticationException {
+    public void login(String email, String password) throws AuthenticationException {
 
         try {
-            accountDao.login(username, password);
+            accountDao.login(email, password);
         } catch (Exception e) {
             throw new InvalidCredentialsException("User not found!");
         }
     }
 
     @Override
-    public void logout(String username) {
+    public void logout(String email) {
         try {
-            accountDao.logout(username);
+            accountDao.logout(email);
         } catch (Exception e) {
             throw new LogoutException("User not logged in!");
         }

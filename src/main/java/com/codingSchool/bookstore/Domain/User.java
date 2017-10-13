@@ -11,53 +11,44 @@ public class User implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(nullable = false)
-    private String username;
+    @Column
+    private String afm;
 
-    @Column(nullable = false)
-    private String password;
+    @Column
+    private String lastname;
 
     @Column
     private String firstname;
+
     @Column
-    private String lastname;
+    private String address;
 
     @Column(nullable = false)
     private String email;
 
-    public User() {
-    }
+    @Column(nullable = false)
+    private String password;
 
-    public User(String username, String password, String firstname, String lastname, String email) {
-        this.username = username;
-        this.password = password;
-        this.firstname = firstname;
+    @Column(nullable = false)
+    private String userType;
+    
+
+    public User(String afm, String lastname, String firstname, String address, String email, String password, String userType) {
+        this.afm = afm;
         this.lastname = lastname;
-        this.email = email;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getFirstname() {
-        return firstname;
-    }
-
-    public void setFirstname(String firstname) {
         this.firstname = firstname;
+        this.address = address;
+        this.email = email;
+        this.password = password;
+        this.userType = userType;
+    }
+
+    public String getAfm() {
+        return afm;
+    }
+
+    public void setAfm(String afm) {
+        this.afm = afm;
     }
 
     public String getLastname() {
@@ -68,6 +59,22 @@ public class User implements Serializable {
         this.lastname = lastname;
     }
 
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
     public String getEmail() {
         return email;
     }
@@ -76,16 +83,35 @@ public class User implements Serializable {
         this.email = email;
     }
 
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getUserType() {
+        return userType;
+    }
+
+    public void setUserType(String userType) {
+        this.userType = userType;
+    }
+
     @Override
     public String toString() {
         return "User{" +
                 "id=" + id +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", firstname='" + firstname + '\'' +
+                ", afm='" + afm + '\'' +
                 ", lastname='" + lastname + '\'' +
+                ", firstname='" + firstname + '\'' +
+                ", address='" + address + '\'' +
                 ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", userType='" + userType + '\'' +
                 '}';
     }
 }
+
 
