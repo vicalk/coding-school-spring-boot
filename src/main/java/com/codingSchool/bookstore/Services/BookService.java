@@ -1,8 +1,5 @@
 package com.codingSchool.bookstore.Services;
 
-import com.codingSchool.bookstore.Domain.Book;
-import org.springframework.data.domain.Page;
-
 import java.util.List;
 
 public interface BookService {

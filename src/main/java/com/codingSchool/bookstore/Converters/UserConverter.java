@@ -8,11 +8,14 @@ public class UserConverter {
 
     public static User buildUserObject(RegistrationForm registrationForm) {
         User user = new User();
-        user.setUsername(registrationForm.getUsername());
-        user.setPassword(registrationForm.getPassword());
-        user.setEmail(registrationForm.getEmail());
-        user.setFirstname(registrationForm.getFirstname());
+        user.setAfm(registrationForm.getAfm());
         user.setLastname(registrationForm.getLastname());
+        user.setFirstname(registrationForm.getFirstname());
+        user.setAddress(registrationForm.getAddress());
+        user.setEmail(registrationForm.getEmail());
+        user.setPassword(registrationForm.getPassword());
+        user.getUserType(registrationForm.getUserType());
+
         return user;
     }
 }

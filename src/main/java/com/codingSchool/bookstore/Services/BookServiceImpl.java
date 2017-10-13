@@ -1,6 +1,5 @@
 package com.codingSchool.bookstore.Services;
 
-import com.codingSchool.bookstore.Domain.Book;
 import com.codingSchool.bookstore.Repositories.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

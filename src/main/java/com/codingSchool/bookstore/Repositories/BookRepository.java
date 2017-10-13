@@ -1,7 +1,6 @@
 package com.codingSchool.bookstore.Repositories;
 
 
-import com.codingSchool.bookstore.Domain.Book;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

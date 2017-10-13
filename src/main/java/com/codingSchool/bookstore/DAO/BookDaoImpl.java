@@ -1,6 +1,5 @@
 package com.codingSchool.bookstore.DAO;
 
-import com.codingSchool.bookstore.Domain.Book;
 import com.google.common.collect.ImmutableList;
 import org.springframework.stereotype.Repository;
 

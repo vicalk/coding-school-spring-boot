@@ -1,6 +1,5 @@
 package com.codingSchool.bookstore.Controllers;
 
-import com.codingSchool.bookstore.Domain.Book;
 import com.codingSchool.bookstore.Model.SearchForm;
 import com.codingSchool.bookstore.Services.BookService;
 import org.springframework.beans.factory.annotation.Autowired;

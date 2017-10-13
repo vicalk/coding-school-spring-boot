@@ -1,39 +1,44 @@
 package com.codingSchool.bookstore.Domain;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.*;
 
 
-@Entity
+@Entity (name = "USER")
 public class User implements Serializable {
     @Id
+    @Column(name = "USER_ID",nullable = false)
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Long userId;
 
-    @Column
-    private String afm;
+    @Column(name = "AFM")
+    private int afm;
 
-    @Column
+    @Column (name = "LASTNAME")
     private String lastname;
 
-    @Column
+    @Column (name = "FIRSTNAME")
     private String firstname;
 
-    @Column
+    @Column (name = "ADDRESS")
     private String address;
 
-    @Column(nullable = false)
+    @Column(name = "EMAIL",nullable = false)
     private String email;
 
-    @Column(nullable = false)
+    @Column(name = "PASSWORD",nullable = false)
     private String password;
 
-    @Column(nullable = false)
-    private String userType;
-    
+    @Column(name = "USER_TYPE",nullable = false)
+    private int userType;
 
-    public User(String afm, String lastname, String firstname, String address, String email, String password, String userType) {
+    @OneToMany(mappedBy = "user", targetEntity = Vehicle.class)
+    private List<Vehicle> vehicles;
+
+
+    public User(int afm, String lastname, String firstname, String address, String email, String password, int userType) {
         this.afm = afm;
         this.lastname = lastname;
         this.firstname = firstname;
@@ -43,11 +48,14 @@ public class User implements Serializable {
         this.userType = userType;
     }
 
-    public String getAfm() {
+    public User() {
+    }
+
+    public int getAfm() {
         return afm;
     }
 
-    public void setAfm(String afm) {
+    public void setAfm(int afm) {
         this.afm = afm;
     }
 
@@ -91,25 +99,24 @@ public class User implements Serializable {
         this.password = password;
     }
 
-    public String getUserType() {
+    public int getUserType() {
         return userType;
     }
 
-    public void setUserType(String userType) {
+    public void setUserType(int userType) {
         this.userType = userType;
     }
 
     @Override
     public String toString() {
         return "User{" +
-                "id=" + id +
-                ", afm='" + afm + '\'' +
+                "afm=" + afm +
                 ", lastname='" + lastname + '\'' +
                 ", firstname='" + firstname + '\'' +
                 ", address='" + address + '\'' +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
-                ", userType='" + userType + '\'' +
+                ", userType=" + userType +
                 '}';
     }
 }
